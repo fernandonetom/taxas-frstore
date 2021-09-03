@@ -22,16 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
     tabela += `
     <tr>
       <th scope="row">Débito</th>
-      <td>${(newV/(1-(1.48)/100)).toFixed(2)}</td>
+      <td>${(newV/(1-(1.45)/100)).toFixed(2)}</td>
       <td>1.48%</td>
-      <td>${(newV/(1-(1.48)/100)).toFixed(2)}</td>
+      <td>${(newV/(1-(1.45)/100)).toFixed(2)}</td>
     </tr>
     `
 
-    const taxa = [0, 1.08, 1.62, 2.16, 2.7, 3.24, 3.78, 4.32, 4.86, 5.4, 5.94, 6.48]
+    const taxa = [0, 0.69, 1.03, 1.36, 1.69, 2.02, 2.93, 3.26, 3.58, 3.91, 4.23, 4.54]
 
     for(let i = 0; i< 12; i++){
-      const nTaxa = 2.96 + taxa[i];
+      const nTaxa = 2.9 + taxa[i];
       const valorComTaxa = (newV/(1-(nTaxa)/100)).toFixed(2)
       tabela += `
     <tr>
