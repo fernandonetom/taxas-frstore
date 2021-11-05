@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let tabela = `<table class="table table-striped">
     <thead>
       <tr>
-      <th scope="col">Parcela</th>
-        <th scope="col">Total</th>
+      <th scope="col">Parcelas</th>
         <th scope="col">Taxa</th>
-        <th scope="col">Parcela</th>
+        <th scope="col">Valor recebido</th>
       </tr>
     </thead>
     <tbody>
@@ -21,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newV = parseFloat(valor)
     tabela += `
     <tr>
-      <th scope="row">Débito</th>
-      <td>${(newV*(1-(1.45)/100)).toFixed(2)}</td>
+      <th scope="row">Débito ${(newV*(1-(1.45)/100)).toFixed(2)}</th>
       <td>1.48%</td>
       <td>${(newV*(1-(1.45)/100)).toFixed(2)}</td>
     </tr>
@@ -35,10 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const valorComTaxa = (newV*(1-(nTaxa)/100)).toFixed(2)
       tabela += `
     <tr>
-      <th scope="row">${i +1}x</th>
-      <td>${valorComTaxa}</td>
+      <th scope="row">${i +1}x de R$ ${(valorComTaxa/(i + 1)).toFixed(2)}</th>
       <td>${nTaxa.toFixed(2)}%</td>
-      <td>${(valorComTaxa/(i + 1)).toFixed(2)}</td>
+      <td>${valorComTaxa}</td>
     </tr>
     `
     }
