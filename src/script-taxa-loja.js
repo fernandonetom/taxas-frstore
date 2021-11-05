@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <tbody>
     `;
 
-    const newV = parseFloat(valor)
+    const newV = parseFloat(valor).toFixed(2)
     tabela += `
     <tr>
-      <th scope="row">Débito ${(newV*(1-(1.45)/100)).toFixed(2)}</th>
+      <th scope="row">Débito ${newV}</th>
       <td>1.48%</td>
       <td>${(newV*(1-(1.45)/100)).toFixed(2)}</td>
     </tr>
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const valorComTaxa = (newV*(1-(nTaxa)/100)).toFixed(2)
       tabela += `
     <tr>
-      <th scope="row">${i +1}x de R$ ${(valorComTaxa/(i + 1)).toFixed(2)}</th>
+      <th scope="row">${i +1}x de R$ ${(newV/(i + 1)).toFixed(2)}</th>
       <td>${nTaxa.toFixed(2)}%</td>
-      <td>${valorComTaxa}</td>
+      <td>R$ ${valorComTaxa}</td>
     </tr>
     `
     }
